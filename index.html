@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog API</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>
+       Dog Breed 
+    </h1>
+   <main>
+    <!-- <div class="bh-card"><ul><li><img src="" id="image" alt="dog-image"></li><li id="name"></li><li id="breed-group"></li><li id="life-span"></li><li id="height"></li><li id="weight"></li></ul></div> -->
+   </main>
+     <button onclick="generateDivs()">Show more</button>
+</body>
+<script>
+    let id=0;
+    let i;
+    function generateDivs(){
+    for(i=0;i<10;i++)
+   {
+        createCard();
+        getDog(id);
+        id++;
+    }
+}
+generateDivs();
+    function createCard(){
+     document.getElementsByTagName('main')[0].innerHTML+=`<div id=card_${id} class="bh-card"><ul><li><img src="" id="image" alt="dog-image"></li><li id="name"></li><li id="breed-group"></li><li id="life-span"></li><li id="height"></li><li id="weight"></li></ul></div>`;        
+    }
+   function getDog(id){
+  $.ajax({url: "https://api.TheDogAPI.com/v1/breeds", success: function(result){
+     $(`#card_${id} li #image`).attr('src',result[id].image.url);
+     $(`#card_${id} #name`).append("<b>Name: </b>"+result[id].name);
+     $(`#card_${id} #breed-group`).append("<b>Breed Group: </b>" +result[id].breed_group);
+     $(`#card_${id} #life-span`).append("<b>Life Span: </b>"+result[id].life_span);
+     $(`#card_${id} #height`).append("<b>Height: </b>"+result[id].height.metric+ " cm");
+     $(`#card_${id} #weight`).append("<b>Weight: </b>"+result[id].weight.metric+ " kg");
+     // console.log(result[a]);
+  }});
+}
+</script>
+</html>

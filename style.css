@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(236, 236, 236);
+}
+main{
+    text-align: center;    
+}
+h1{
+    font-size: 40px;
+    width: max-content;
+    margin: 10px auto 5px auto;
+}
+ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+#name{
+   width: max-content;
+}
+li #image{
+    height: 240px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+.bh-card{
+    /* border: 2px solid rgb(231, 231, 231); */
+    display: flex;
+    margin:30px;
+    height:420px;
+width: 350px;
+    padding: 20px;
+    transition: ease-in-out 0.1s;
+    box-shadow: 5px 3px 9px rgb(34, 33, 33);
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: white;
+}
+.bh-card:hover{
+    box-shadow: 6px 4px 12px rgb(34, 33, 33);
+    transform: scale(1.03);
+}
+li:nth-child(2){
+    margin-top: 25px;
+    text-align: left;
+    font-size: 1.2em;
+}
+li:nth-child(1){
+    padding-left: 0px;
+}
+li{
+    text-align: left;
+    margin-top: 5px;
+    font-size: 18px;
+    padding-left: 15px;
+}
+button{
+    display: block;
+margin: 20px auto;
+padding: 15px 40px 15px 40px;
+font-size: 16px;
+cursor: pointer;
+border: none;
+outline: 1px solid green;
+background-color: rgb(44, 44, 44);
+color: white;
+transition: ease-in-out 0.2s;
+font-weight: 600;
+}
+button:hover{
+    background-color: white;
+    color: rgb(44, 44, 44);
+}
