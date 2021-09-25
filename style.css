@@ -80,12 +80,16 @@ button:hover{
 /* Media Queries for Responsive view */
 @media(max-width:576px){
 .bh-card{
+    margin: 30px auto;
    flex-direction: column;
-    height: 375px;
-    width: 240px;
+    height: 385px;
+    width: 255px;
     font-size: 12px;
 }
 li{
     font-size: 12px;
+}
+#name{
+    width: auto;
 }
 }
